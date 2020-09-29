@@ -12,8 +12,6 @@
 
     <!-- Added a link to our external stylesheet-->
     <link rel="stylesheet" href="style.css">
-    
-    <script src="script.js"></script>
 
 </head>
 <body>
@@ -65,7 +63,9 @@
           <h3 class="card-header">Result</h3>
           <div class="card-body">
             <h1 id="first-number"></h1>
+            <br>
             <h1 id="operator"></h1>
+            <br>
             <h1 id="second-number"></h1>
             <hr>
             <h1 id="result"></h1>
@@ -79,7 +79,30 @@
 
 $(document).ready(function() {
 
+var letterBtn = $()
 // Your code here...
+var primaryNumberInput = $(".btn-primary");
+var secondaryNumberInput = $(".number");
+var operatorInput = $(".operator");
+var result = $(".equal");
+var clear = $(".clear");
+
+
+  primaryNumberInput.on("click", function(){
+  $("#first-number").append($(this).val());
+  console.log($(this).val());
+  });
+  operatorInput.on("click", function(){
+  $("#operator").append($(this).val());
+  });
+  secondaryNumberInput.on("click", function(){
+  $("#second-number").append($(this).val());
+  });
+  result.on("click", function(){
+  $("#equal").append($(this).val());
+  });
+
+  
 
 
 });
